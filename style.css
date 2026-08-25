@@ -1,0 +1,578 @@
+/* ==========================================
+   VARIABLES DE DISEÑO (PALETA & TIPOGRAFÍA)
+   ========================================== */
+:root {
+    --bg-primary: #FFF9F9;          /* Fondo base crema/rosa ultra suave */
+    --bg-card: #FFFFFF;             /* Blanco puro para tarjetas */
+    --accent-pink: #E8A0BF;         /* Rosa suave refinado */
+    --accent-pink-dark: #C06087;    /* Rosa fuerte para hover/detalles */
+    --accent-gold: #C47B68;         /* Dorado/Bronce cálido para joyería */
+    --text-main: #2C2628;           /* Oscuro elegante para lectura limpia */
+    --text-muted: #7A6F73;          /* Gris rosáceo para subtítulos */
+    --font-heading: 'Cinzel', 'Playfair Display', serif;
+    --font-script: 'Alex Brush', cursive;
+    --font-body: 'Plus Jakarta Sans', 'Montserrat', sans-serif;
+    --shadow-soft: 0 10px 30px rgba(232, 160, 191, 0.12);
+    --shadow-hover: 0 15px 35px rgba(192, 96, 135, 0.18);
+    --border-radius: 16px;
+    --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ==========================================
+   RESET BÁSICO & FONDO CON DEGRADADO SUAVE
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Difuminado sutil en todo el sitio: Beige cálido a rosa crema */
+    background: linear-gradient(180deg, #F9EDE6 0%, #FFF5F5 40%, #FFF9F9 100%);
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Clases de utilidad tipográfica */
+.font-luxury-serif {
+    font-family: var(--font-heading);
+    letter-spacing: 0.12em;
+}
+
+.font-luxury-script {
+    font-family: var(--font-script);
+}
+
+.font-clean {
+    font-family: var(--font-body);
+}
+
+/* ==========================================
+   HEADER Y NAVBAR ELEGANTE
+   ========================================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(232, 160, 191, 0.2);
+    z-index: 1000;
+    padding: 12px 24px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* BRAND Y LOGO EN CÍRCULO */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFF0F5, #FDE2E4);
+    border: 2px solid var(--accent-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(232, 160, 191, 0.25);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.brand-logo:hover .logo-circle {
+    transform: scale(1.05);
+    border-color: var(--accent-pink-dark);
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.logo-circle:has(.logo-img) .logo-text-fallback {
+    display: none;
+}
+
+.logo-text-fallback {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent-pink-dark);
+    letter-spacing: 1px;
+}
+
+.brand-name {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    text-transform: uppercase;
+}
+
+/* MENÚ NAVEGACIÓN */
+.nav-menu {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--accent-pink-dark);
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.mobile-toggle span {
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-main);
+    border-radius: 2px;
+}
+
+/* ==========================================
+   HERO / INICIO (DIFUMINADO ELEGANTE)
+   ========================================== */
+.hero {
+    padding: 90px 24px 70px;
+    text-align: center;
+    /* Difuminado suave sin manchas ni formas geométricas */
+    background: linear-gradient(135deg, rgba(245, 226, 218, 0.6) 0%, rgba(255, 240, 243, 0.8) 50%, rgba(255, 249, 249, 0.4) 100%);
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-subtitle {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: var(--accent-gold);
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 6px;
+    color: var(--text-main);
+    text-transform: uppercase;
+}
+
+.hero-welcome {
+    font-family: var(--font-script);
+    font-size: 3rem;
+    color: var(--accent-gold);
+    margin-bottom: 14px;
+    line-height: 1;
+}
+
+.hero-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 480px;
+    margin-bottom: 28px;
+    font-weight: 300;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--text-main);
+    color: #FFFFFF;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 8px 20px rgba(44, 38, 40, 0.15);
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(196, 123, 104, 0.3);
+}
+
+/* ==========================================
+   SECCIONES GENERALES Y TITULARES
+   ========================================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--text-main);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.divider {
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-gold);
+    margin: 14px auto 0;
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+/* ==========================================
+   CATEGORÍAS
+   ========================================== */
+.categories {
+    padding: 60px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    background: var(--bg-card);
+    padding: 30px 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 1px solid rgba(232, 160, 191, 0.15);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(196, 123, 104, 0.3);
+}
+
+.category-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.category-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.category-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================
+   PRODUCTOS / COLECCIÓN
+   ========================================== */
+.products {
+    padding: 60px 24px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+.product-card {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(232, 160, 191, 0.15);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.product-image-container {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    background-color: #F8F8F8;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.06);
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-pink-dark);
+    margin-bottom: 16px;
+}
+
+.btn-whatsapp {
+    margin-top: auto;
+    background-color: #25D366;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1EBE5D;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+/* PRODUCTOS AGOTADOS */
+.product-card.product-out-of-stock {
+    opacity: 0.75;
+}
+
+.badge-out {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #888888;
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.btn-whatsapp.btn-disabled {
+    background-color: #CCCCCC;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   EFECTO SKELETON LOADER
+   ========================================== */
+@keyframes skeletonPulse {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.skeleton-loader {
+    animation: skeletonPulse 1.5s infinite;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer {
+    background: #231E20;
+    color: #FFFFFF;
+    padding: 50px 24px 30px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    margin-bottom: 12px;
+    background: #332B2E;
+    border-color: var(--accent-pink);
+}
+
+.footer-brand {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.footer p {
+    color: #B0A8AB;
+    font-size: 0.85rem;
+    font-weight: 300;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+/* ==========================================
+   ADAPTABILIDAD MÓVIL
+   ========================================== */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #FFFFFF;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        gap: 16px;
+        text-align: center;
+        border-bottom: 2px solid var(--accent-pink);
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: 2.1rem;
+    }
+
+    .hero-welcome {
+        font-size: 2.4rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+    }
+
+    .product-image-container {
+        height: 220px;
+    }
+}
+
+/* ==========================================
+   ANIMACIONES Y FADE IN
+   ========================================== */
+/* Se desactivan las formas/manchas flotantes */
+.animate-blob-1,
+.animate-blob-2,
+.blob-shape-1,
+.blob-shape-2 {
+  display: none !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
