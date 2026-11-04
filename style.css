@@ -579,7 +579,7 @@ a {
 
 
 /* ==========================================
-   UTILIDADES Y ANIMACIÓN NOTORIA AL SCROLL
+   UTILIDADES Y ANIMACION NOTORIA AL SCROLL
    ========================================== */
 .line-clamp-2 {
     display: -webkit-box;
@@ -588,7 +588,7 @@ a {
     overflow: hidden;
 }
 
-/* Animación de aparición notoria para las cards al hacer scroll */
+/* Animacion de aparicion notoria para las cards al hacer scroll */
 .scroll-card-reveal {
     opacity: 0;
     transform: translateY(38px) scale(0.93);
